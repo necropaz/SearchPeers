@@ -11,5 +11,8 @@ request = urllib2.Request(url="http://localhost:14265", data=stringified, header
 returnData = urllib2.urlopen(request).read()
 
 neighbors = json.loads(returnData)
-print(neighbors)
+length=len(neighbors['neighbors'])
+for i in range (0,length):
+	print("IP:"+str(neighbors['peers'][i]['address'])+"latestReceivedNewTransactionTimeDelta:"+str(neighbors['peers'][i]['latestReceivedNewTransactionTimeDelta']))
+
 
