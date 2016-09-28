@@ -13,5 +13,5 @@ returnData = urllib2.urlopen(request).read()
 neighbors = json.loads(returnData)
 length=len(neighbors['neighbors'])
 for i in range (0,length):
-	print("IP:\t"+str(neighbors['neighbors'][i]['address'])+"numberOfAllTransactions:\t"+str(neighbors['neighbors'][i]['numberOfAllTransactions'])+"numberOfNewTransactions:\t"+str(neighbors['neighbors'][i]['numberOfNewTransactions']))
+	print("IP:\t"+str(neighbors['neighbors'][i]['address'])+"\tnumberOfAllTransactions:\t"+str(neighbors['neighbors'][i]['numberOfAllTransactions'])+"\tnumberOfNewTransactions:\t"+str(neighbors['neighbors'][i]['numberOfNewTransactions']))
 
