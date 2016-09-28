@@ -1,7 +1,7 @@
 import urllib2
 import json
 
-command = {'command': 'getPeers'}
+command = {'command': 'getNeighbors'}
 
 stringified = json.dumps(command)
 
@@ -13,6 +13,5 @@ returnData = urllib2.urlopen(request).read()
 neighbors = json.loads(returnData)
 length=len(neighbors['neighbors'])
 for i in range (0,length):
-	print("IP:"+str(neighbors['peers'][i]['address'])+"latestReceivedNewTransactionTimeDelta:"+str(neighbors['peers'][i]['latestReceivedNewTransactionTimeDelta']))
-
+	print("IP:"+str(neighbors['neighbors'][i]['address'])+"numberOfAllTransactions: "+str(neighbors['neighbors'][i]['numberOfAllTransactions'])+"numberOfNewTransactions: "+str(neighbors['neighbors'][i]['numberOfNewTransactions']))
 
